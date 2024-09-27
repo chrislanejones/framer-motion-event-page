@@ -3,6 +3,20 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --background: rgb(17, 17, 17);
+  --bg-opaque: rgb(17, 17, 17, 0.25);
+  --background-light: rgb(35, 35, 35);
+  --background-dark: rgb(8, 8, 8);
+
+  --text: rgb(235, 236, 243);
+}
+
+body {
+  color: var(--text);
+  background: var(--background);
+}
+
 .dotWrapper:hover {
   background: rgba(255, 255, 255, 0.15);
 }
@@ -14,4 +28,17 @@
     var(--brand)
   ) !important;
   opacity: 1 !important;
+}
+
+.section-wrapper {
+  z-index: 10;
+  max-width: 1150px;
+  margin: auto;
+  padding: 9.6rem;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }

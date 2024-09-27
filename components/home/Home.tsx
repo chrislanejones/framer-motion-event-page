@@ -5,7 +5,7 @@ import { Hero } from "../hero/Hero";
 export const Home = () => {
   return (
     <>
-      <div className="grid grid-cols-1">
+      <div className="grid grid-cols-[60px_1fr]">
         <main id="main">
           <Hero />
           <About />
