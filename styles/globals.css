@@ -2,3 +2,16 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.dotWrapper:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.dotWrapper:hover > .dot {
+  background: linear-gradient(
+    180deg,
+    var(--background),
+    var(--brand)
+  ) !important;
+  opacity: 1 !important;
+}
