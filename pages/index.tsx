@@ -6,6 +6,7 @@ export default function home() {
     <>
       <Head>
         <title>Framer Motion Event Page</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <Home />
     </>

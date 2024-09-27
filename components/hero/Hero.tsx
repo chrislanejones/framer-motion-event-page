@@ -4,8 +4,8 @@ import { DotGrid } from "./Dots";
 
 export const Hero = () => {
   return (
-    <div className="mt-16 mb-100 py-16 px-10">
-      <section className="section-wrapper ">
+    <section className="section-wrapper mt-16 mb-100 py-16 px-10">
+      <div className="">
         <div className="flex flex-nowrap flex-row items-center justify-between gap-6">
           <div className="relative z-10 w-fit my-20">
             <Reveal>
@@ -35,7 +35,7 @@ export const Hero = () => {
           ></motion.div>
         </div>
         <DotGrid />
-      </section>
-    </div>
+      </div>
+    </section>
   );
 };
