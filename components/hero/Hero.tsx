@@ -5,10 +5,11 @@ export const Hero = () => {
   return (
     <section className="mt-16 mb-96 px-16 py-10">
       {/* <div className={styles.heroGrid}> */}
-      <div className="relative z-10 w-fit-content my-8 mx-0">
+      <div className="relative z-10 w-fit-content my-8 mx-0 overflow-visable">
         <Reveal>
-          <h1 className="text-3xl text-extrabold leading-10">
-            Marketing Event<span>.</span>
+          <h1 className="text-8xl text-extrabold">
+            Marketing Event
+            <span className="text-fuchsia-500">.</span>
           </h1>
         </Reveal>
         <Reveal>
