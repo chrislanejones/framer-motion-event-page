@@ -17,6 +17,19 @@ body {
   background: var(--background);
 }
 
+.home {
+  display: grid;
+  grid-template-columns: 60px 1fr;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: linear-gradient(180deg, var(--background), var(--text));
+  opacity: 0.35;
+}
+
 .dotWrapper:hover {
   background: rgba(255, 255, 255, 0.15);
 }
@@ -31,14 +44,38 @@ body {
 }
 
 .section-wrapper {
+  position: relative;
   z-index: 10;
   max-width: 1150px;
   margin: auto;
   padding: 9.6rem;
+  overflow: hidden;
 }
 
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+}
+
+.heading {
+  height: calc(45px + 3.6rem);
+  padding: 0 3.6rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: var(--bg-opaque);
+  backdrop-filter: blur(12px);
+
+  font-size: var(--text-md);
+  font-weight: bold;
+
+  @media (max-width: 768px) {
+    padding: 0 2.4rem;
+  }
 }

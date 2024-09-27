@@ -1,14 +1,14 @@
 import React from "react";
-import { About } from "../about/About";
 import { Hero } from "../hero/Hero";
+import { Heading } from "../nav/Heading";
 
 export const Home = () => {
   return (
     <>
-      <div className="grid grid-cols-[60px_1fr]">
+      <div className="home">
         <main id="main">
+          <Heading />
           <Hero />
-          <About />
           <div
             style={{
               height: "200px",
