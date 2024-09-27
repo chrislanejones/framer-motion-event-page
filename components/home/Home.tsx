@@ -1,11 +1,13 @@
 import React from "react";
 import { About } from "../about/About";
+import { Hero } from "../hero/Hero";
 
 export const Home = () => {
   return (
     <>
       <div className="grid grid-cols-1">
         <main id="main">
+          <Hero />
           <About />
           <div
             style={{
