@@ -9,7 +9,7 @@ export const Hero = () => {
         <div className="flex flex-nowrap flex-row items-center justify-between gap-6">
           <div className="relative z-10 w-fit my-20">
             <Reveal>
-              <h1 className="text-6xl text-extrabold">
+              <h1 className="text-8xl font-black">
                 Marketing Event
                 <span className="text-fuchsia-500">.</span>
               </h1>

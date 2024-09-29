@@ -41,7 +41,7 @@ export const SideBar = () => {
         }}
         className={selected === "about" ? selected : ""}
       >
-        About
+        Time & Date
       </motion.a>
       <motion.a
         initial={{ x: -70 }}
@@ -51,7 +51,7 @@ export const SideBar = () => {
         onClick={() => setSelected("projects")}
         className={selected === "projects" ? selected : ""}
       >
-        Projects
+        Speakers
       </motion.a>
       <motion.a
         initial={{ x: -70 }}
@@ -61,7 +61,7 @@ export const SideBar = () => {
         onClick={() => setSelected("experience")}
         className={selected === "experience" ? selected : ""}
       >
-        Exp.
+        More Info
       </motion.a>
       <motion.a
         initial={{ x: -70 }}
