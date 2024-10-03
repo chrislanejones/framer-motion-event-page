@@ -6,10 +6,9 @@ export const Stats = () => {
       <Reveal>
         <div className="flex items-center">
           <h4>
-            <AiFillCode size="2.4rem" color="var(--brand)" />
-            <span>Use at work</span>
+            <span className="text-md font-bold relative ml-3">Use at work</span>
           </h4>
-          <div className="text-xl font-bold relative ml-2">
+          <div className="flex flex-wrap gap-4 mb-12">
             <span className="chip">JavaScript</span>
             <span className="chip">TypeScript</span>
             <span className="chip">HTML</span>
@@ -31,10 +30,9 @@ export const Stats = () => {
       <Reveal>
         <div className="flex items-center">
           <h4>
-            <AiFillSmile size="2.4rem" color="var(--brand)" />
-            <span>Use for fun</span>
+            <span className="text-md font-bold relative ml-3">Use for fun</span>
           </h4>
-          <div className="text-xl font-bold relative ml-2">
+          <div className="flex flex-wrap gap-4 mb-12">
             <span className="chip">React Native</span>
             <span className="chip">Gatsby</span>
             <span className="chip">Chakra Ui</span>
