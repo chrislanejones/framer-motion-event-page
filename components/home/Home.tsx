@@ -1,8 +1,8 @@
 import React from "react";
-import { Hero } from "../hero/Hero";
+import { Hero } from "./hero/Hero";
 import { Heading } from "../nav/Heading";
 import { SideBar } from "../nav/Sidebar";
-import { About } from "../about/About";
+import { About } from "./about/About";
 
 export const Home = () => {
   return (

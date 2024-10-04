@@ -1,4 +1,4 @@
-import { SectionHeader } from "../utils/SectionHeader";
+import { SectionHeader } from "../../utils/SectionHeader";
 import { Stats } from "./Stats";
 
 export const About = () => {

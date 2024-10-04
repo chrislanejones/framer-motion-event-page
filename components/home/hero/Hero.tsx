@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Reveal } from "../utils/Reveal";
+import { Reveal } from "../../utils/Reveal";
 import { DotGrid } from "./Dots";
 
 export const Hero = () => {
