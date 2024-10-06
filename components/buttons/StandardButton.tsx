@@ -9,7 +9,7 @@ export const StandardButton = ({ children, onClick }: Props) => {
   return (
     <button
       onClick={onClick}
-      className="outline-none border-none cursor-pointer px-6 py-3"
+      className="outline-none border-none cursor-pointer px-6 py-3 relative z-20 overflow-hidden transition-opacity duration-200 standardButton hover:opacity-90"
     >
       {children}
     </button>
