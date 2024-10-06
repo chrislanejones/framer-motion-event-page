@@ -165,3 +165,19 @@ body {
   background: var(--primary);
   color: var(--text);
 }
+
+.outlineButton:hover {
+  color: var(--text);
+}
+
+.outlineButton::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  background: var(--brand);
+  height: 100%;
+  width: 100%;
+  left: -100%;
+  top: -100%;
+  transition: 0.2s left, 0.2s top;
+}
