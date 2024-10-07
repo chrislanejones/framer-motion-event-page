@@ -181,3 +181,14 @@ body {
   top: -100%;
   transition: 0.2s left, 0.2s top;
 }
+
+/* Contact */
+
+.contactEmail {
+  font-size: var(--text-md);
+  background: var(--background-light);
+}
+
+.contactEmail:hover {
+  color: var(--brand);
+}
