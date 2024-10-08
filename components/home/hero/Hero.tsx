@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Reveal } from "../../utils/Reveal";
 import { DotGrid } from "./Dots";
+import Image from "next/image";
 
 export const Hero = () => {
   return (
@@ -15,7 +16,7 @@ export const Hero = () => {
               </h1>
             </Reveal>
             <Reveal>
-              <h2 className="font-extralight text-4xl mt-2.5">
+              <h2 className="font-thin text-4xl mt-2.5">
                 In <span>NOVA</span>
               </h2>
             </Reveal>
@@ -32,6 +33,14 @@ export const Hero = () => {
             initial={{ y: -30, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.4 }}
+            <Image
+            className="relative z-10 m-8 mr-36 rounded-full outline outline-3 outline-offset-6 transition duration-400"
+            src={test}
+            priority
+            alt="John Carlo Devera | Frontend Developer"
+            width={250}
+            height={250}
+          />
           ></motion.div>
         </div>
         <DotGrid />
