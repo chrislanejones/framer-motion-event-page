@@ -12,7 +12,7 @@ export const Hero = () => {
         <div className="relative z-10 w-fit my-[4.8rem]">
           <Reveal>
             <h1 className="title text-8xl font-black">
-              Event
+              Marketing Event
               <span className="text-fuchsia-500">.</span>
             </h1>
           </Reveal>

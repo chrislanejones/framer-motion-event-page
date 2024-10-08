@@ -1,6 +1,5 @@
-"use client";
 import React, { useEffect, useRef } from "react";
-import { useInView, useAnimation } from "framer-motion";
+import { motion, useInView, useAnimation } from "framer-motion";
 
 interface Props {
   children: JSX.Element;
@@ -25,8 +24,36 @@ export const Reveal = ({ children, width = "fit-content" }: Props) => {
   }, [isInView, mainControls, slideControls]);
 
   return (
-    <div ref={ref}>
-      <div>{children}</div>
+    <div ref={ref} style={{ position: "relative", width, overflow: "hidden" }}>
+      <motion.div
+        variants={{
+          hidden: { opacity: 0, y: 75 },
+          visible: { opacity: 1, y: 0 },
+        }}
+        initial="hidden"
+        animate={mainControls}
+        transition={{ duration: 0.5, delay: 0.25 }}
+      >
+        {children}
+      </motion.div>
+      <motion.div
+        variants={{
+          hidden: { left: 0 },
+          visible: { left: "100%" },
+        }}
+        initial="hidden"
+        animate={slideControls}
+        transition={{ duration: 0.5, ease: "easeIn" }}
+        style={{
+          position: "absolute",
+          top: 4,
+          bottom: 4,
+          left: 0,
+          right: 0,
+          background: "var(--primary)",
+          zIndex: 20,
+        }}
+      />
     </div>
   );
 };

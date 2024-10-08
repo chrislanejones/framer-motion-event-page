@@ -3,6 +3,7 @@ import { Hero } from "./hero/Hero";
 import { Heading } from "../nav/Heading";
 import { SideBar } from "../nav/Sidebar";
 import { About } from "./about/About";
+import { Contact } from "./contact/Contact";
 
 export const Home = () => {
   return (
@@ -13,6 +14,7 @@ export const Home = () => {
           <Heading />
           <Hero />
           <About />
+          <Contact />
           <div
             style={{
               height: "200px",

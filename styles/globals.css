@@ -28,6 +28,10 @@ body {
   background: var(--background);
 }
 
+.primary-color {
+  color: var(--primary);
+}
+
 .section-wrapper {
   position: relative;
   z-index: 10;

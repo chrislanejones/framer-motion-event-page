@@ -1,15 +1,18 @@
+import { SectionHeader } from "@/components/utils/SectionHeader";
+import { InfoItem } from "./infoItems";
+
 export const Info = () => {
   return (
     <section className="section-wrapper" id="experience">
-      <SectionHeader title="Experience" dir="l" />
-      {experience.map((item) => (
-        <ExperienceItem key={item.title} {...item} />
+      <SectionHeader title="info" dir="l" />
+      {info.map((item) => (
+        <InfoItem key={item.title} {...item} />
       ))}
     </section>
   );
 };
 
-const Info = [
+const info = [
   {
     title: "Event",
     position: "Info",
