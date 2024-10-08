@@ -7,7 +7,7 @@ import { About } from "./about/About";
 export const Home = () => {
   return (
     <>
-      <div className="home">
+      <div className="grid grid-cols-[60px_1fr]">
         <SideBar />
         <main id="main">
           <Heading />

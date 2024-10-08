@@ -35,7 +35,7 @@ export const DotGrid = () => {
       dots.push(
         <div
           onClick={handleDotClick}
-          className="p-[0.8rem] cursor-crosshair transition duration-250 bg-transparent rounded-lg"
+          className="singleDots"
           data-index={index}
           key={`${i}-${j}`}
         >
@@ -52,7 +52,7 @@ export const DotGrid = () => {
   return (
     <div
       style={{ gridTemplateColumns: `repeat(${GRID_WIDTH}, 1fr)` }}
-      className="absolute top-3 bottom-3 right-14 max-w-[75%] grid z-0"
+      className="dotGrid"
     >
       {dots.map((dot) => dot)}
     </div>
