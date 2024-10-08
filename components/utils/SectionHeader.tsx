@@ -14,7 +14,7 @@ export const SectionHeader = ({ title, dir = "r" }: Props) => {
       <div className="w-100 h-1 text-white opacity-5" />
       <h3>
         <Reveal>
-          <span className="text-xl font-extrabold text-end">
+          <span className="text-6xl font-black text-end">
             {title}
             <span className="text-fuchsia-500">.</span>
           </span>
