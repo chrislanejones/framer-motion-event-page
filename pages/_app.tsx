@@ -23,3 +23,8 @@ export default function App({ Component, pageProps }: AppProps) {
     </div>
   );
 }
+
+
+<div class="mb-6 font-extralight">
+  <!-- Your content here -->
+</div>
