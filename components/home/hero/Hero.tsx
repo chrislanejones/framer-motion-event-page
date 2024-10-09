@@ -37,20 +37,22 @@ export const Hero = () => {
         <div className="test2">
           <DotGrid />
         </div>
-        <motion.div
-          initial={{ y: -30, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.5, delay: 0.4 }}
-        >
-          <Image
-            className="test3"
-            src={DataCenter}
-            priority
-            alt="John Carlo Devera | Frontend Developer"
-            width={480}
-            height={251}
-          />
-        </motion.div>
+        <div className="test3">
+          <motion.div
+            initial={{ y: -30, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+          >
+            <Image
+              className="test3"
+              src={DataCenter}
+              priority
+              alt="John Carlo Devera | Frontend Developer"
+              width={480}
+              height={251}
+            />
+          </motion.div>
+        </div>
       </div>
     </section>
   );
