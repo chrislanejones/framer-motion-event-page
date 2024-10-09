@@ -190,3 +190,26 @@ body {
 .contactEmail:hover {
   color: var(--brand);
 }
+
+.test {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+}
+
+.test1 {
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+}
+
+.test2 {
+  grid-column: 2 / 4;
+  grid-row: 1 / 2;
+}
+
+.divt3 {
+  grid-column: 3 / 4;
+  grid-row: 1 / 2;
+}
