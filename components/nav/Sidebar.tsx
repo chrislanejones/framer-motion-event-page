@@ -31,6 +31,16 @@ export const SideBar = () => {
       transition={{ duration: 0.5 }}
       className="sidebar bg-[var(--background-dark)] h-screen sticky top-0 left-0 z-20 flex flex-col items-center"
     >
+      <span
+        className=""
+        onClick={() => {
+          document.location.hash === ""
+            ? document.getElementById("main")?.scrollIntoView()
+            : (document.location.hash = "");
+        }}
+      >
+        Event<span>.</span>
+      </span>
       <motion.a
         initial={{ x: -70 }}
         animate={{ x: 0 }}
