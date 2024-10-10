@@ -2,17 +2,18 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
 export const SideBar = () => {
-  const [selected, setSelected] = useState("");
+  const [selected, setSelected] = useState<string>("");
 
   useEffect(() => {
-    const sections = document.querySelectorAll(".section-wrapper");
+    const sections =
+      document.querySelectorAll<HTMLDivElement>(".section-wrapper");
 
-    const options = {
+    const options: IntersectionObserverInit = {
       threshold: 0.3,
     };
 
-    const callback = (entries: any) => {
-      entries.forEach((entry: any) => {
+    const callback: IntersectionObserverCallback = (entries) => {
+      entries.forEach((entry) => {
         if (entry.isIntersecting) {
           setSelected(entry.target.id);
         }
@@ -32,24 +33,25 @@ export const SideBar = () => {
       className="sidebar bg-[var(--background-dark)] h-screen sticky top-0 left-0 z-20 flex flex-col items-center"
     >
       <span
-        className=""
+        className="[writing-mode:vertical-lr] cursor-pointer flex-shrink-0 text-md font-bold line-height-1 w-45 h-45 flex items-center justify-center bg-background rounded-md mx-auto my-6"
         onClick={() => {
           document.location.hash === ""
             ? document.getElementById("main")?.scrollIntoView()
             : (document.location.hash = "");
         }}
       >
-        Event<span>.</span>
+        UX Now
+        <span className="text-md font-bold line-height-1 primary-color">.</span>
       </span>
       <motion.a
         initial={{ x: -70 }}
         animate={{ x: 0 }}
         transition={{ duration: 0.5, delay: 0.1 }}
-        href="#about"
+        href="#Time"
         onClick={() => {
-          setSelected("about");
+          setSelected("Time");
         }}
-        className={selected === "about" ? selected : ""}
+        className={selected === "Time" ? "selected" : ""}
       >
         Time & Date
       </motion.a>
@@ -59,7 +61,7 @@ export const SideBar = () => {
         transition={{ duration: 0.5, delay: 0.2 }}
         href="#projects"
         onClick={() => setSelected("projects")}
-        className={selected === "projects" ? selected : ""}
+        className={selected === "Speakers" ? selected : ""}
       >
         Speakers
       </motion.a>
@@ -67,9 +69,9 @@ export const SideBar = () => {
         initial={{ x: -70 }}
         animate={{ x: 0 }}
         transition={{ duration: 0.5, delay: 0.3 }}
-        href="#experience"
-        onClick={() => setSelected("experience")}
-        className={selected === "experience" ? selected : ""}
+        href="#Info"
+        onClick={() => setSelected("Info")}
+        className={selected === "Info" ? selected : ""}
       >
         More Info
       </motion.a>
@@ -79,7 +81,7 @@ export const SideBar = () => {
         transition={{ duration: 0.5, delay: 0.4 }}
         href="#contact"
         onClick={() => setSelected("contact")}
-        className={selected === "contact" ? styles.selected : ""}
+        className={selected === "contact" ? selected : ""}
       >
         Contact
       </motion.a>
