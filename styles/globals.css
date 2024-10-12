@@ -98,11 +98,12 @@ body {
   background: rgba(255, 255, 255, 0.15);
 }
 
-.sidebar a {
-  height: 100px;
-  flex-shrink: 0;
+.logo {
   writing-mode: vertical-lr;
-  font-weight: 200;
+}
+
+.sidebar a {
+  writing-mode: vertical-lr;
   display: flex;
   align-items: center;
   justify-content: center;

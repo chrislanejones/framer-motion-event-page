@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import Profile from "@/public/images/CLJ-Avatar.jpg";
 
-export const SideBar = () => {
+export const Sidebar = () => {
   const [selected, setSelected] = useState<string>("");
 
   useEffect(() => {
@@ -32,24 +32,24 @@ export const SideBar = () => {
       initial={{ x: -70 }}
       animate={{ x: 0 }}
       transition={{ duration: 0.5 }}
-      className="bg-[var(--background-dark)] h-50 sticky grid"
+      className="bg-[var(--background-dark)] sticky top-0 h-screen grid grid-rows-[auto_1fr_auto]"
     >
-      <span className="sidebar bg-[var(--background-dark)] z-20 items-center text-1xl">
-        <span
-          className="[writing-mode:vertical-lr] cursor-pointer flex-shrink-0 text-2xl font-bold line-height-1 w-45 h-45 flex mx-auto my-6"
-          onClick={() => {
-            if (document.location.pathname !== "/") {
-              // Navigate to the home page
-              document.location.pathname = "/";
-            } else {
-              // Scroll to the top of the page
-              window.scrollTo({ top: 0, behavior: "smooth" });
-            }
-          }}
-        >
-          UX Now
-          <span className="font-bold line-height-1 primary-color">.</span>
-        </span>
+      <span
+        className="logo flex cursor-pointer text-2xl font-bold w-45 h-45 mx-auto my-6 self-center justify-self-center"
+        onClick={() => {
+          if (document.location.pathname !== "/") {
+            // Navigate to the home page
+            document.location.pathname = "/";
+          } else {
+            // Scroll to the top of the page
+            window.scrollTo({ top: 0, behavior: "smooth" });
+          }
+        }}
+      >
+        UX Now
+        <span className="font-bold font-thin primary-color">.</span>
+      </span>
+      <span className="sidebar space-y-8 z-20 text-1xl">
         <motion.a
           initial={{ x: -70 }}
           animate={{ x: 0 }}
@@ -93,9 +93,11 @@ export const SideBar = () => {
           Contact
         </motion.a>
       </span>
-      <div className="justify-items-end self-end justify-self-end items-end self-end">
+      <div className="grid items-center justify-items-center py-4">
         <Image className="w-12 h-12 rounded-full" src={Profile} alt="Avatar" />
       </div>
     </motion.nav>
   );
 };
+
+export default Sidebar;
