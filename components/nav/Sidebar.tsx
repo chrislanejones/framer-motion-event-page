@@ -89,6 +89,13 @@ export const SideBar = () => {
       >
         Contact
       </motion.a>
+      <span className="[writing-mode:vertical-lr] cursor-pointer flex-shrink-0 b-10 text-2xl font-bold line-height-1 w-45 h-45 flex items-end justify-end bg-background rounded-md mx-auto my-6">
+        <img
+          className="w-12 h-12 rounded-full"
+          src="https://via.placeholder.com/150"
+          alt="Avatar"
+        />
+      </span>
     </motion.nav>
   );
 };
