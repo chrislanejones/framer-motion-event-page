@@ -32,7 +32,7 @@ export const SideBar = () => {
       initial={{ x: -70 }}
       animate={{ x: 0 }}
       transition={{ duration: 0.5 }}
-      className="bg-[var(--background-dark)] h-50 sticky flex flex-col"
+      className="bg-[var(--background-dark)] h-50 sticky grid"
     >
       <span className="sidebar bg-[var(--background-dark)] z-20 items-center text-1xl">
         <span
