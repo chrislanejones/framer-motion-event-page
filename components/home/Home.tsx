@@ -2,8 +2,9 @@ import React from "react";
 import { Hero } from "./hero/Hero";
 import { Heading } from "../nav/Heading";
 import { Sidebar } from "../nav/Sidebar";
-import { About } from "./about/About";
 import { Contact } from "./contact/Contact";
+import { Time } from "./about/Time";
+import { Speakers } from "./speakers/Speakers";
 
 export const Home = () => {
   return (
@@ -12,8 +13,9 @@ export const Home = () => {
         <Sidebar />
         <main id="main">
           <Heading />
+          <Time />
+          <Speakers />
           <Hero />
-          <About />
           <Contact />
           <div
             style={{

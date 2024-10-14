@@ -2,7 +2,7 @@ import { SectionHeader } from "../../utils/SectionHeader";
 import { Stats } from "./Stats";
 import { Reveal } from "@/components/utils/Reveal";
 
-export const About = () => {
+export const Time = () => {
   return (
     <section id="Time" className="section-wrapper">
       <SectionHeader title="Time" dir="l" />
