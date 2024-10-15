@@ -12,10 +12,10 @@ export const Home = () => {
       <div className="grid grid-cols-[60px_1fr]">
         <Sidebar />
         <main id="main">
-          <Heading />
+          <Hero />
           <Time />
           <Speakers />
-          <Hero />
+          <Heading />
           <Contact />
           <div
             style={{
