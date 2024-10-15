@@ -4,7 +4,7 @@ import { Reveal } from "@/components/utils/Reveal";
 
 export const Time = () => {
   return (
-    <section id="Time" className="section-wrapper">
+    <section id="Time" className="section-wrapper section">
       <SectionHeader title="Time" dir="l" />
       <div className="grid grid-cols-[1fr_300px] gap-[2.4rem] md:grid-cols-1">
         <div>

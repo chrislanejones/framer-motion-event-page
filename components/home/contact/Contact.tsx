@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export const Contact = () => {
   return (
-    <section className="section-wrapper" id="contact">
+    <section className="section-wrapper section" id="contact">
       <div className="max-w-[700px] mx-auto rounded-[1.2rem]">
         <Reveal width="100%">
           <h4>

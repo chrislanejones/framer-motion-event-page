@@ -7,7 +7,7 @@ import { StandardButton } from "@/components/buttons/StandardButton";
 
 export const Hero = () => {
   return (
-    <section className={`section-wrapper ${"hero"}`}>
+    <section className={`section-wrapper section`}>
       <div className="hero-grid-section">
         <div className="hero-title-section">
           <Reveal>

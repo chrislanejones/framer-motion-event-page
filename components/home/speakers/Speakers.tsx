@@ -4,7 +4,7 @@ import { Reveal } from "@/components/utils/Reveal";
 
 export const Speakers = () => {
   return (
-    <section id="Speakers" className="section-wrapper">
+    <section id="Speakers" className="section-wrapper section">
       <SectionHeader title="Speakers" dir="l" />
       <div className="grid grid-cols-[1fr_300px] gap-[2.4rem] md:grid-cols-1">
         <div>

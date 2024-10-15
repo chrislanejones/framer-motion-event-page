@@ -5,6 +5,7 @@ import { Sidebar } from "../nav/Sidebar";
 import { Contact } from "./contact/Contact";
 import { Time } from "./about/Time";
 import { Speakers } from "./speakers/Speakers";
+import { Info } from "./info/Info";
 
 export const Home = () => {
   return (
@@ -16,6 +17,7 @@ export const Home = () => {
           <Time />
           <Speakers />
           <Heading />
+          <Info />
           <Contact />
           <div
             style={{
