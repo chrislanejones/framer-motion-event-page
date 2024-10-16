@@ -1,6 +1,5 @@
 import React from "react";
 import { Hero } from "./hero/Hero";
-import { Heading } from "../nav/Heading";
 import { Sidebar } from "../nav/Sidebar";
 import { Contact } from "./contact/Contact";
 import { Time } from "./about/Time";
@@ -14,9 +13,8 @@ export const Home = () => {
         <Sidebar />
         <main id="main">
           <Hero />
-          <Time />
           <Speakers />
-          <Heading />
+          <Time />
           <Info />
           <Contact />
           <div
