@@ -3,8 +3,8 @@ import { Hero } from "./hero/Hero";
 import { Sidebar } from "../nav/Sidebar";
 import { Contact } from "./contact/Contact";
 import { Time } from "./about/Time";
-import { Speakers } from "./speakers/Speakers";
 import { Info } from "./info/Info";
+import Speakers from "./speakers/Speakers";
 
 export const Home = () => {
   return (
