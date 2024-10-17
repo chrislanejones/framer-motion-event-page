@@ -68,7 +68,7 @@ body {
 
 @media (max-width: 768px) {
   .title {
-    font-size: var(--text-xl);
+    font-size: 3rem;
   }
 }
 
