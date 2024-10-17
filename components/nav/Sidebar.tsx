@@ -53,6 +53,16 @@ export const Sidebar = () => {
         <motion.a
           initial={{ x: -70 }}
           animate={{ x: 0 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          href="#Speakers"
+          onClick={() => setSelected("Speakers")}
+          className={selected === "Speakers" ? selected : ""}
+        >
+          Speakers
+        </motion.a>
+        <motion.a
+          initial={{ x: -70 }}
+          animate={{ x: 0 }}
           transition={{ duration: 0.5, delay: 0.1 }}
           href="#Time"
           onClick={() => {
@@ -61,16 +71,6 @@ export const Sidebar = () => {
           className={selected === "Time" ? "selected" : ""}
         >
           Time & Date
-        </motion.a>
-        <motion.a
-          initial={{ x: -70 }}
-          animate={{ x: 0 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          href="#projects"
-          onClick={() => setSelected("projects")}
-          className={selected === "Speakers" ? selected : ""}
-        >
-          Speakers
         </motion.a>
         <motion.a
           initial={{ x: -70 }}
@@ -87,8 +87,8 @@ export const Sidebar = () => {
           animate={{ x: 0 }}
           transition={{ duration: 0.5, delay: 0.4 }}
           href="#contact"
-          onClick={() => setSelected("contact")}
-          className={selected === "contact" ? selected : ""}
+          onClick={() => setSelected("Contact")}
+          className={selected === "Contact" ? selected : ""}
         >
           Contact
         </motion.a>

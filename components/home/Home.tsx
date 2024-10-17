@@ -5,6 +5,7 @@ import { Contact } from "./contact/Contact";
 import { Time } from "./about/Time";
 import { Info } from "./info/Info";
 import Speakers from "./speakers/Speakers";
+import { Heading } from "../nav/Heading";
 
 export const Home = () => {
   return (
@@ -12,6 +13,7 @@ export const Home = () => {
       <div className="grid grid-cols-[60px_1fr]">
         <Sidebar />
         <main id="main">
+          <Heading />
           <Hero />
           <Speakers />
           <Time />
