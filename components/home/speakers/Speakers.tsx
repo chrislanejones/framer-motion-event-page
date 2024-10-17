@@ -31,7 +31,7 @@ export const Speakers = () => {
     <section id="Speakers" className="section-wrapper section">
       <SectionHeader title="Speakers" dir="l" />
       <div className="container mx-auto p-4">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 py-4">
           {items.map((item) => (
             <div
               key={item.id}
@@ -47,9 +47,7 @@ export const Speakers = () => {
             </div>
           ))}
         </div>
-      </div>
-      <div className="container mx-auto p-4">
-        <div className="grid grid-cols-1 col-start-2  md:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
           {items.map((item) => (
             <div
               key={item.id}
