@@ -1,9 +1,12 @@
 import { Reveal } from "@/components/utils/Reveal";
 import Link from "next/link";
+import { MdEmail } from "react-icons/md";
+import { SectionHeader } from "@/components/utils/SectionHeader";
 
 export const Contact = () => {
   return (
     <section className="section-wrapper section" id="contact">
+      <SectionHeader title="Contact" dir="l" />
       <div className="max-w-[700px] mx-auto rounded-[1.2rem]">
         <Reveal width="100%">
           <h4>
@@ -26,7 +29,8 @@ export const Contact = () => {
         </Reveal>
         <Reveal width="100%">
           <Link href="mailto:events@email.com">
-            <div className="flex items-center justify-center gap-3.2 w-fit mx-auto transition duration-500 px-8 py-3 rounded-lg contactEmail">
+            <div className="flex items-center space-x-4 justify-center gap-3.2 w-fit mx-auto transition duration-500 px-8 py-3 rounded-lg contactEmail">
+              <MdEmail />
               <span>Send Email</span>
             </div>
           </Link>
