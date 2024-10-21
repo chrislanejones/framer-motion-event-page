@@ -2,10 +2,11 @@ import React from "react";
 import { Hero } from "./hero/Hero";
 import { Sidebar } from "../nav/Sidebar";
 import { Contact } from "./contact/Contact";
-import { Time } from "./about/Time";
+
 import { Info } from "./info/Info";
 import Speakers from "./speakers/Speakers";
 import { Heading } from "../nav/Heading";
+import { Time } from "./about/Time";
 
 export const Home = () => {
   return (
