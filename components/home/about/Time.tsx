@@ -1,16 +1,5 @@
 import { SectionHeader } from "../../utils/SectionHeader";
 
-const convertTimeToNumber = (time) => {
-  const [hour, minute, period] = time.match(/(\d+):(\d+) (\w+)/).slice(1);
-  let hourNumber = parseInt(hour, 10);
-  if (period === "PM" && hourNumber !== 12) {
-    hourNumber += 12;
-  } else if (period === "AM" && hourNumber === 12) {
-    hourNumber = 0;
-  }
-  return hourNumber * 60 + parseInt(minute, 10);
-};
-
 export const Time = () => {
   const sessions = [
     { id: 1, title: "Session 1", time: "09:00 AM - 10:00 AM" },
@@ -24,14 +13,14 @@ export const Time = () => {
   ];
 
   const colorClasses = [
+    "bg-red-100",
+    "bg-yellow-100",
+    "bg-green-100",
     "bg-blue-100",
-    "bg-blue-200",
-    "bg-blue-300",
-    "bg-blue-400",
-    "bg-blue-500",
-    "bg-blue-600",
-    "bg-blue-700",
-    "bg-blue-800",
+    "bg-indigo-100",
+    "bg-purple-100",
+    "bg-pink-100",
+    "bg-gray-100",
   ];
 
   return (
@@ -42,11 +31,13 @@ export const Time = () => {
           {sessions.map((session, index) => (
             <div
               key={session.id}
-              className={`p-4 border rounded-lg shadow-lg ${
+              className={`w-48 h-48 p-4 border rounded-lg shadow-lg  ${
                 colorClasses[index % colorClasses.length]
               }`}
             >
-              <h2 className="text-xl font-semibold">{session.title}</h2>
+              <h2 className="text-xl font-semibold col-start-1 text-black">
+                {session.title}
+              </h2>
               <p className="text-gray-600">{session.time}</p>
             </div>
           ))}
