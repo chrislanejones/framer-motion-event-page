@@ -1,5 +1,16 @@
 import { SectionHeader } from "../../utils/SectionHeader";
 
+const convertTimeToNumber = (time) => {
+  const [hour, minute, period] = time.match(/(\d+):(\d+) (\w+)/).slice(1);
+  let hourNumber = parseInt(hour, 10);
+  if (period === "PM" && hourNumber !== 12) {
+    hourNumber += 12;
+  } else if (period === "AM" && hourNumber === 12) {
+    hourNumber = 0;
+  }
+  return hourNumber * 60 + parseInt(minute, 10);
+};
+
 export const Time = () => {
   const sessions = [
     { id: 1, title: "Session 1", time: "09:00 AM - 10:00 AM" },
@@ -12,18 +23,31 @@ export const Time = () => {
     { id: 8, title: "Session 8", time: "06:30 PM - 07:30 PM" },
   ];
 
+  const colorClasses = [
+    "bg-blue-100",
+    "bg-blue-200",
+    "bg-blue-300",
+    "bg-blue-400",
+    "bg-blue-500",
+    "bg-blue-600",
+    "bg-blue-700",
+    "bg-blue-800",
+  ];
+
   return (
     <section id="Time" className="section-wrapper section">
       <SectionHeader title="Time" dir="l" />
       <div className="container mx-auto p-4">
-        <div className="relative border-l border-gray-200">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
           {sessions.map((session, index) => (
-            <div key={session.id} className="mb-8 ml-4">
-              <div className="absolute w-3 h-3 bg-blue-500 rounded-full -left-1.5 border border-white"></div>
-              <div className="p-4 bg-blue-500 rounded-lg shadow-lg">
-                <h2 className="text-xl font-semibold">{session.title}</h2>
-                <p className="text-white-600">{session.time}</p>
-              </div>
+            <div
+              key={session.id}
+              className={`p-4 border rounded-lg shadow-lg ${
+                colorClasses[index % colorClasses.length]
+              }`}
+            >
+              <h2 className="text-xl font-semibold">{session.title}</h2>
+              <p className="text-gray-600">{session.time}</p>
             </div>
           ))}
         </div>
