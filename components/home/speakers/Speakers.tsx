@@ -17,7 +17,7 @@ interface Item {
 }
 
 const Speakers: React.FC = () => {
-  const [items, setItems] = useState<Item[]>([
+  const [items] = useState<Item[]>([
     {
       id: 1,
       title: "Laura Matthews",
@@ -54,15 +54,16 @@ const Speakers: React.FC = () => {
 
   useEffect(() => {
     const section = document.getElementById("Speakers");
+    let hasAnimated = false; // Flag to track if the animation has already occurred
+
     const handleScroll = () => {
-      if (section) {
+      if (section && !hasAnimated) {
         const sectionTop = section.getBoundingClientRect().top;
         const windowHeight = window.innerHeight;
 
         if (sectionTop < windowHeight && sectionTop > 0) {
           controls.start({ x: 0 });
-        } else {
-          controls.start({ x: 100 }); // Start from the right
+          hasAnimated = true; // Set the flag to true after the first animation
         }
       }
     };
