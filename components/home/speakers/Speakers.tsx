@@ -53,8 +53,18 @@ const Speakers: React.FC = () => {
   const controls = useAnimation();
 
   useEffect(() => {
+    const section = document.getElementById("Speakers");
     const handleScroll = () => {
-      controls.start({ x: window.scrollY });
+      if (section) {
+        const sectionTop = section.getBoundingClientRect().top;
+        const windowHeight = window.innerHeight;
+
+        if (sectionTop < windowHeight && sectionTop > 0) {
+          controls.start({ x: 0 });
+        } else {
+          controls.start({ x: 100 }); // Start from the right
+        }
+      }
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -72,6 +82,7 @@ const Speakers: React.FC = () => {
             <motion.div
               key={item.id}
               className="text-center p-4 rounded-lg shadow-lg"
+              initial={{ x: 100 }} // Start from the right
               animate={controls}
               transition={{ type: "spring", stiffness: 100 }}
             >
