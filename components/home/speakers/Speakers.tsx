@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { motion, useAnimation } from "framer-motion";
 import { SectionHeader } from "../../utils/SectionHeader";
 import Image from "next/image";
 import Laura from "@/public/images/headshots/Laura.jpg";
@@ -49,15 +50,30 @@ const Speakers: React.FC = () => {
     },
   ]);
 
+  const controls = useAnimation();
+
+  useEffect(() => {
+    const handleScroll = () => {
+      controls.start({ x: window.scrollY });
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [controls]);
+
   return (
     <section id="Speakers" className="section-wrapper section">
       <SectionHeader title="Speakers" dir="l" />
       <div className="container mx-auto pt-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
           {items.map((item) => (
-            <div
+            <motion.div
               key={item.id}
-              className="text-center p-4  rounded-lg shadow-lg"
+              className="text-center p-4 rounded-lg shadow-lg"
+              animate={controls}
+              transition={{ type: "spring", stiffness: 100 }}
             >
               <Image
                 src={item.src}
@@ -68,7 +84,7 @@ const Speakers: React.FC = () => {
               />
               <h2 className="mt-4 font-black">{item.title}</h2>
               <p className="mt-2 font-thin">{item.description}</p>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
