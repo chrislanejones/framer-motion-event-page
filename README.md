@@ -2,4 +2,4 @@
 
 ## Built with NextJS and Framer Motion
 
-Graphic Coming Soon
+![alt text](/public/images/Landing-Page.jpg)
