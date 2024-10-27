@@ -3,40 +3,6 @@ import Link from "next/link";
 import { MdEmail } from "react-icons/md";
 import { SectionHeader } from "@/components/utils/SectionHeader";
 
-const validate = () => {
-  let valid = true;
-  const newErrors = { name: "", email: "", message: "" };
-
-  if (!formData.name) {
-    newErrors.name = "Name is required";
-    valid = false;
-  }
-
-  if (!formData.email) {
-    newErrors.email = "Email is required";
-    valid = false;
-  } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
-    newErrors.email = "Email is invalid";
-    valid = false;
-  }
-
-  if (!formData.message) {
-    newErrors.message = "Message is required";
-    valid = false;
-  }
-
-  setErrors(newErrors);
-  return valid;
-};
-
-const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-  e.preventDefault();
-  if (validate()) {
-    console.log("Form submitted:", formData);
-    // Here you can handle the form submission, e.g., send the data to a server
-  }
-};
-
 export const Contact = () => {
   return (
     <section className="section-wrapper section" id="contact">
