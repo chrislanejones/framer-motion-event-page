@@ -1,5 +1,35 @@
 import { SectionHeader } from "../../utils/SectionHeader";
-import { HoverEffect } from "../ui/card-hover-effect";
+import React, { useState, ReactNode } from "react";
+
+interface Session {
+  id: number;
+  title: string;
+  time: string;
+}
+
+interface HoverCardProps {
+  title: string;
+  description: ReactNode;
+}
+
+const HoverCard: React.FC<HoverCardProps> = ({ title, description }) => {
+  const [isHovered, setIsHovered] = useState(false);
+
+  return (
+    <div
+      className={`transform transition-all duration-300 ease-in-out ${
+        isHovered ? "scale-105" : ""
+      }`}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
+      <div className="relative w-full h-48 rounded-lg shadow-lg overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-75" />
+        {description}
+      </div>
+    </div>
+  );
+};
 
 export const Time = () => {
   const sessions = [
@@ -27,22 +57,25 @@ export const Time = () => {
   return (
     <section id="Time" className="section-wrapper section">
       <SectionHeader title="Time" dir="l" />
-      <div className="container mx-auto p-4">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-          <HoverEffect>
+      <div className="container mx-auto pt-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {sessions.map((session, index) => (
-            <div
+            <HoverCard
               key={session.id}
-              className={`w-48 h-48 p-4 border rounded-lg shadow-lg  ${
-                colorClasses[index % colorClasses.length]
-              }`}
-            >
-              <h2 className="text-xl font-semibold col-start-1 text-black">
-                {session.title}
-              </h2>
-              <p className="text-gray-600">{session.time}</p>
-              <HoverEffect />
-            </div>
+              title={session.title}
+              description={
+                <div
+                  className={`h-full w-full ${
+                    colorClasses[index % colorClasses.length]
+                  } p-6 flex flex-col justify-center items-center`}
+                >
+                  <h3 className="text-xl font-semibold mb-2 text-gray-800">
+                    {session.title}
+                  </h3>
+                  <p className="text-gray-600 text-center">{session.time}</p>
+                </div>
+              }
+            />
           ))}
         </div>
       </div>
