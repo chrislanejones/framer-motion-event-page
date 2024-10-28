@@ -2,4 +2,4 @@
 
 ## Built with NextJS and Framer Motion
 
-![alt text](/public/images/Landing-Page.jpg)
+![Image of a Conference Landing Page](/public/images/Landing-Page.jpg)

@@ -1,4 +1,5 @@
 import { SectionHeader } from "../../utils/SectionHeader";
+import { HoverEffect } from "../ui/card-hover-effect";
 
 export const Time = () => {
   const sessions = [
@@ -28,6 +29,7 @@ export const Time = () => {
       <SectionHeader title="Time" dir="l" />
       <div className="container mx-auto p-4">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+          <HoverEffect>
           {sessions.map((session, index) => (
             <div
               key={session.id}
@@ -39,6 +41,7 @@ export const Time = () => {
                 {session.title}
               </h2>
               <p className="text-gray-600">{session.time}</p>
+              <HoverEffect />
             </div>
           ))}
         </div>
