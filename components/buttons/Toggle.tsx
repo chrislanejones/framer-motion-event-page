@@ -1,8 +1,9 @@
+// components/ToggleButton.tsx
 import React, { useState } from "react";
 
-const ToggleButton = () => {
+const ToggleButton: React.FC = () => {
   // State to track the toggle status
-  const [isToggled, setIsToggled] = useState(false);
+  const [isToggled, setIsToggled] = useState<boolean>(false);
 
   // Function to handle toggle
   const handleToggle = () => {
@@ -21,12 +22,4 @@ const ToggleButton = () => {
   );
 };
 
-const App = () => {
-  return (
-    <div className="flex justify-center items-center h-screen">
-      <ToggleButton />
-    </div>
-  );
-};
-
-export default App;
+export default ToggleButton;
