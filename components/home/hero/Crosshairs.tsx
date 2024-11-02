@@ -6,7 +6,9 @@ export const CrosshairGrid = () => {
 
   const crosshairs = [];
 
-  const handleCrosshairClick = (e: any) => {
+  const handleCrosshairClick = (e: React.MouseEvent<HTMLDivElement>) => {
+    const index = Number((e.target as HTMLDivElement).dataset.index);
+
     anime({
       targets: ".crosshair-point",
       scale: [
@@ -23,7 +25,7 @@ export const CrosshairGrid = () => {
       ],
       delay: anime.stagger(100, {
         grid: [GRID_WIDTH, GRID_HEIGHT],
-        from: e.target.dataset.index,
+        from: index,
       }),
     });
   };
