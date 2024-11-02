@@ -1,7 +1,15 @@
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Profile from "@/public/images/CLJ-Avatar.jpg";
+import { Button } from "../ui/button";
+import { Input } from "../ui/input";
+import { Label } from "../ui/label";
 
 export const Sidebar = () => {
   const [selected, setSelected] = useState<string>("");
@@ -94,7 +102,40 @@ export const Sidebar = () => {
         </motion.a>
       </span>
       <div className="grid items-center justify-items-center py-4">
-        <Image className="w-12 h-12 rounded-full" src={Profile} alt="Avatar" />
+        <Popover>
+          <PopoverTrigger>
+            <Image
+              className="w-12 h-12 rounded-full"
+              src={Profile}
+              alt="Avatar"
+            />
+          </PopoverTrigger>
+          <PopoverContent className="w-80" side="right">
+            <form className="grid gap-4">
+              <div className="space-y-2">
+                <h4 className="font-black leading-none">Login</h4>
+                <p className="text-thin">Enter your credentials to log in.</p>
+              </div>
+              <div className="grid gap-2">
+                <div className="grid grid-cols-4 items-center gap-4">
+                  <Label htmlFor="username" className="text-right">
+                    Username
+                  </Label>
+                  <Input id="username" className="col-span-3" />
+                </div>
+                <div className="grid grid-cols-4 items-center gap-4">
+                  <Label htmlFor="password" className="text-right">
+                    Password
+                  </Label>
+                  <Input id="password" type="password" className="col-span-3" />
+                </div>
+              </div>
+              <Button type="submit" className="w-full bg-black">
+                Login
+              </Button>
+            </form>
+          </PopoverContent>
+        </Popover>
       </div>
     </motion.nav>
   );

@@ -94,7 +94,7 @@ const Speakers: React.FC = () => {
                 height={200}
                 className="mx-auto rounded-full shadow-slate-100 border-2 p-2 border-white"
               />
-              <div className="relative mt-4 p-4 bg-slate-50 dark:bg-slate-700 rounded-lg">
+              <div className="relative mt-4 p-4 bg-slate-800 dark:bg-slate-700 rounded-lg">
                 {/* Grid Background Pattern */}
                 <div
                   className="absolute inset-0 opacity-10"
