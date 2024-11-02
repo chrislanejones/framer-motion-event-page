@@ -1,9 +1,9 @@
 import { motion } from "framer-motion";
 import { Reveal } from "../../utils/Reveal";
-import { DotGrid } from "./Dots";
 import Image from "next/image";
 import DataCenter from "@/public/images/Data-Center.jpg";
 import { StandardButton } from "@/components/buttons/StandardButton";
+import { CrosshairGrid } from "./Crosshairs";
 
 export const Hero = () => {
   return (
@@ -38,8 +38,8 @@ export const Hero = () => {
             </StandardButton>
           </Reveal>
         </div>
-        <div className="hero-dotgrid-section">
-          <DotGrid />
+        <div className="hero-crosshair-grid-section">
+          <CrosshairGrid />
         </div>
         <div className="hero-image-section">
           <motion.div

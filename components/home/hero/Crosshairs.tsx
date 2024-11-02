@@ -1,14 +1,14 @@
 import anime from "animejs";
 
-export const DotGrid = () => {
+export const CrosshairGrid = () => {
   const GRID_WIDTH = 25;
   const GRID_HEIGHT = 15;
 
-  const dots = [];
+  const crosshairs = [];
 
-  const handleDotClick = (e: any) => {
+  const handleCrosshairClick = (e: any) => {
     anime({
-      targets: ".dot-point",
+      targets: ".crosshair-point",
       scale: [
         { value: 1.35, easing: "easeOutSine", duration: 250 },
         { value: 1, easing: "easeInOutQuad", duration: 500 },
@@ -32,17 +32,22 @@ export const DotGrid = () => {
 
   for (let i = 0; i < GRID_WIDTH; i++) {
     for (let j = 0; j < GRID_HEIGHT; j++) {
-      dots.push(
+      crosshairs.push(
         <div
-          onClick={handleDotClick}
-          className="singleDots"
+          onClick={handleCrosshairClick}
+          className="single-crosshair relative"
           data-index={index}
           key={`${i}-${j}`}
         >
           <div
-            className={`${"w-2 h-2 rounded-full bg-gradient-to-b from-[var(--background)] to-[var(--text)] opacity-35"} dot-point`}
+            className="crosshair-point w-4 h-4 opacity-35 relative"
             data-index={index}
-          />
+          >
+            {/* Vertical line */}
+            <div className="absolute left-1/2 top-0 w-[1px] h-full bg-gradient-to-b from-[var(--background)] to-[var(--text)]" />
+            {/* Horizontal line */}
+            <div className="absolute top-1/2 left-0 h-[1px] w-full bg-gradient-to-b from-[var(--background)] to-[var(--text)]" />
+          </div>
         </div>
       );
       index++;
@@ -52,9 +57,9 @@ export const DotGrid = () => {
   return (
     <div
       style={{ gridTemplateColumns: `repeat(${GRID_WIDTH}, 1fr)` }}
-      className="dotGrid"
+      className="crosshair-grid"
     >
-      {dots.map((dot) => dot)}
+      {crosshairs.map((crosshair) => crosshair)}
     </div>
   );
 };
