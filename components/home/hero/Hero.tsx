@@ -47,11 +47,7 @@ export const Hero = () => {
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.4 }}
           >
-            <Image
-              src={DataCenter}
-              priority
-              alt="John Carlo Devera | Frontend Developer"
-            />
+            <Image src={DataCenter} priority alt="Image of a data center" />
           </motion.div>
         </div>
       </div>

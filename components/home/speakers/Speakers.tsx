@@ -12,40 +12,40 @@ import { StaticImport } from "next/dist/shared/lib/get-img-props";
 interface Item {
   id: number; // or string, depending on your data
   src: StaticImport;
+  name: string;
   title: string;
-  description: string;
 }
 
 const Speakers: React.FC = () => {
   const [items] = useState<Item[]>([
     {
       id: 1,
-      title: "Laura Matthews",
-      description: "Marketing Innovation",
+      name: "Laura Matthews",
+      title: "Marketing Innovation",
       src: Laura,
     },
     {
       id: 2,
-      title: "Curtis Henderson",
-      description: "Ranked Top Designer",
+      name: "Curtis Henderson",
+      title: "Ranked Top Designer",
       src: Curtis,
     },
     {
       id: 3,
-      title: "George Phillips",
-      description: "Master Illustrator",
+      name: "George Phillips",
+      title: "Master Illustrator",
       src: George,
     },
     {
       id: 4,
-      title: "Park So-min",
-      description: "UI Foundations",
+      name: "Park So-min",
+      title: "UI Foundations",
       src: Park,
     },
     {
       id: 5,
-      title: "Jasmine Lonf",
-      description: "Management Oficinato",
+      name: "Jasmine Lonf",
+      title: "Management Oficinato",
       src: Jasmine,
     },
   ]);
@@ -83,19 +83,32 @@ const Speakers: React.FC = () => {
             <motion.div
               key={item.id}
               className="text-center p-4 rounded-lg shadow-lg"
-              initial={{ x: 100 }} // Start from the right
+              initial={{ x: 100 }}
               animate={controls}
               transition={{ type: "spring", stiffness: 100 }}
             >
               <Image
                 src={item.src}
-                alt={item.title}
+                alt={item.name}
                 width={200}
                 height={200}
                 className="mx-auto rounded-full shadow-slate-100 border-2 p-2 border-white"
               />
-              <h2 className="mt-4 font-black">{item.title}</h2>
-              <p className="mt-2 font-thin">{item.description}</p>
+              <div className="relative mt-4 p-4 bg-slate-50 dark:bg-slate-800 rounded-lg">
+                {/* Grid Background Pattern */}
+                <div
+                  className="absolute inset-0 opacity-10"
+                  style={{
+                    backgroundImage: `
+            linear-gradient(to right, gray 1px, transparent 1px),
+            linear-gradient(to bottom, gray 1px, transparent 1px)
+          `,
+                    backgroundSize: "20px 20px",
+                  }}
+                />
+                <h2 className="relative z-10 font-black">{item.name}</h2>
+                <p className="relative z-10 mt-2 font-thin">{item.title}</p>
+              </div>
             </motion.div>
           ))}
         </div>
