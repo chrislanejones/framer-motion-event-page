@@ -8,7 +8,7 @@ export const Heading = () => {
           </p>
         </div>
         <div className="justify-self-end self-center">
-          <button className="bg-amber-600 text-white font-thin text-lg px-6 py-1 rounded hover:bg-amber-700 ">
+          <button className="bg-amber-600 text-white font-thin text-lg px-6 py-1 rounded-lg hover:bg-amber-700 ">
             Register Now
           </button>
         </div>

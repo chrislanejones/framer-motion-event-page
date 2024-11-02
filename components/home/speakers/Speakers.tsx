@@ -94,14 +94,14 @@ const Speakers: React.FC = () => {
                 height={200}
                 className="mx-auto rounded-full shadow-slate-100 border-2 p-2 border-white"
               />
-              <div className="relative mt-4 p-4 bg-slate-50 dark:bg-slate-800 rounded-lg">
+              <div className="relative mt-4 p-4 bg-slate-50 dark:bg-slate-700 rounded-lg">
                 {/* Grid Background Pattern */}
                 <div
                   className="absolute inset-0 opacity-10"
                   style={{
                     backgroundImage: `
-            linear-gradient(to right, gray 1px, transparent 1px),
-            linear-gradient(to bottom, gray 1px, transparent 1px)
+            linear-gradient(to right, gray 2px, transparent 2px),
+            linear-gradient(to bottom, gray 2px, transparent 2px)
           `,
                     backgroundSize: "20px 20px",
                   }}
