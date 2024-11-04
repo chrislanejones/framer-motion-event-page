@@ -7,13 +7,8 @@ export const Contact = () => {
   return (
     <section className="section-wrapper section" id="contact">
       <SectionHeader title="Contact" dir="l" />
-      <div className="max-w-[700px] mx-auto rounded-[1.2rem]">
-        <Reveal width="100%">
-          <h4>
-            Contact<span>.</span>
-          </h4>
-        </Reveal>
-        <Reveal width="100%">
+      <div className="container mx-auto pt-10">
+        <Reveal>
           <p>
             Have an idea to discuss? Shoot me an email if you want to connect!
             You can also find me on{" "}
@@ -27,13 +22,15 @@ export const Contact = () => {
             if that&apos;s more your speed.
           </p>
         </Reveal>
-        <Reveal width="100%">
-          <Link href="mailto:events@email.com">
-            <div className="flex items-center space-x-4 justify-center gap-3.2 w-fit mx-auto transition duration-500 px-8 py-3 rounded-lg contactEmail">
-              <MdEmail />
-              <span>Send Email</span>
-            </div>
-          </Link>
+        <Reveal>
+          <div className="mx-auto pt-10">
+            <Link href="mailto:events@email.com">
+              <div className="flex items-center space-x-4 justify-center gap-3.2 w-fit mx-auto transition duration-500 px-8 py-3 rounded-lg contactEmail">
+                <MdEmail />
+                <span>Send Email</span>
+              </div>
+            </Link>
+          </div>
         </Reveal>
       </div>
     </section>

@@ -29,11 +29,11 @@ export const Info = () => {
   return (
     <section className="section-wrapper section" id="Info">
       <SectionHeader title="info" dir="l" />
-      <div className="w-full mx-auto p-4 space-y-2 pt-10">
+      <div className="space-y-2 pt-10">
         {accordionData.map((item, index) => (
           <div key={index} className="border border-gray-700 rounded-lg">
             <button
-              className="w-full px-4 py-3 text-left text-gray-200 font-medium flex justify-between items-center hover:bg-gray-800 rounded-lg focus:outline-none"
+              className="w-full px-4 py-3 text-left text-2xl font-thin flex justify-between items-center hover:bg-slate-800 rounded-lg focus:outline-none"
               onClick={() => toggleAccordion(index)}
             >
               <span>{item.title}</span>
@@ -54,7 +54,7 @@ export const Info = () => {
               </svg>
             </button>
             {openIndex === index && (
-              <div className="px-4 py-3 text-gray-300 bg-gray-800 rounded-b-lg">
+              <div className="px-4 py-3 bg-slate-800 rounded-b-lg">
                 {item.content}
               </div>
             )}

@@ -33,6 +33,8 @@ const HoverCard: React.FC<HoverCardProps> = ({ description }) => {
 };
 
 export const Time = () => {
+  const [timeFilter, setTimeFilter] = useState<"before" | "after">("before");
+
   const sessions: sessions[] = [
     { id: 1, title: "Session 1", time: "9:00AM - 10:00AM" },
     { id: 2, title: "Session 2", time: "10:15AM - 11:15AM" },
@@ -55,33 +57,69 @@ export const Time = () => {
     "bg-gray-100",
   ];
 
+  const filteredSessions = sessions.filter((session) =>
+    timeFilter === "before" ? session.id <= 3 : session.id >= 4
+  );
+
   return (
     <section id="Time" className="section-wrapper section">
       <SectionHeader title="Time" dir="l" />
-      <Reveal>
-        <div className="container mx-auto pt-10">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {sessions.map((session, index) => (
-              <HoverCard
-                key={session.id}
-                title={session.title}
-                description={
-                  <div
-                    className={`h-full w-full ${
-                      colorClasses[index % colorClasses.length]
-                    } p-6 grid grid-rows-[1fr_auto] gap-2`}
-                  >
-                    <h3 className="text-2xl font-thin text-gray-800 justify-self-start">
-                      {session.title}
-                    </h3>
-                    <h4 className="text-2xl font-semibold text-gray-600">
-                      {session.time}
-                    </h4>
-                  </div>
-                }
-              />
-            ))}
+
+      <div className="pt-10">
+        {/* Toggle Switch */}
+        <div className="grid grid-cols-8  mb-5 rounded-lg bg-slate-800 p-2 space-x-2 grid-background">
+          <div className="justify-start">
+            <button
+              className={`px-4 py-2 rounded-lg text-sm font-medium text-white border border-amber-400
+                  ${
+                    timeFilter === "before"
+                      ? "bg-amber-600"
+                      : "hover:bg-amber-700"
+                  }`}
+              onClick={() => setTimeFilter("before")}
+            >
+              Before Lunch
+            </button>
           </div>
+          <div>
+            <button
+              className={`px-4 py-2 rounded-md text-sm font-medium text-white border border-amber-400
+                ${
+                  timeFilter === "after" ? "bg-amber-600" : "hover:bg-amber-700"
+                }`}
+              onClick={() => setTimeFilter("after")}
+            >
+              After Lunch
+            </button>
+          </div>
+          <div className="self-center self-end col-end-9 text-large font-semibold ">
+            <p>Lunch - 12:30 PM</p>
+          </div>
+        </div>
+      </div>
+      <Reveal>
+        {/* Sessions Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {filteredSessions.map((session, index) => (
+            <HoverCard
+              key={session.id}
+              title={session.title}
+              description={
+                <div
+                  className={`h-full w-full ${
+                    colorClasses[index % colorClasses.length]
+                  } p-6 grid grid-rows-[1fr_auto] gap-2`}
+                >
+                  <h3 className="text-2xl font-thin text-gray-800 justify-self-start">
+                    {session.title}
+                  </h3>
+                  <h4 className="text-2xl font-semibold text-gray-600">
+                    {session.time}
+                  </h4>
+                </div>
+              }
+            />
+          ))}
         </div>
       </Reveal>
     </section>
