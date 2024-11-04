@@ -67,33 +67,27 @@ export const Time = () => {
 
       <div className="pt-10">
         {/* Toggle Switch */}
-        <div className="grid grid-cols-8  mb-5 rounded-lg bg-slate-800 p-2 space-x-2 grid-background">
-          <div className="justify-start">
+        <div className="grid grid-cols-1 sm:grid-cols-8 gap-4 mb-5 rounded-lg bg-slate-800 p-2 grid-background">
+          <div className="flex justify-center sm:justify-start">
             <button
               className={`px-4 py-2 rounded-lg text-sm font-medium text-white border border-amber-400
-                  ${
-                    timeFilter === "before"
-                      ? "bg-amber-600"
-                      : "hover:bg-amber-700"
-                  }`}
+          ${timeFilter === "before" ? "bg-amber-600" : "hover:bg-amber-700"}`}
               onClick={() => setTimeFilter("before")}
             >
               Before Lunch
             </button>
           </div>
-          <div>
+          <div className="flex justify-center">
             <button
               className={`px-4 py-2 rounded-md text-sm font-medium text-white border border-amber-400
-                ${
-                  timeFilter === "after" ? "bg-amber-600" : "hover:bg-amber-700"
-                }`}
+        ${timeFilter === "after" ? "bg-amber-600" : "hover:bg-amber-700"}`}
               onClick={() => setTimeFilter("after")}
             >
               After Lunch
             </button>
           </div>
-          <div className="self-center self-end col-end-9 text-large font-semibold ">
-            <p>Lunch - 12:30 PM</p>
+          <div className="text-center sm:text-right sm:col-end-9 text-large font-semibold">
+            <p>Lunch 12:30 PM</p>
           </div>
         </div>
       </div>
