@@ -6,19 +6,19 @@ export const Info = () => {
 
   const accordionData = [
     {
-      title: "Section 1",
+      title: "General Conduct",
       content:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "All attendees, speakers, sponsors, and volunteers must treat each other with respect and courtesy. Professional and appropriate behavior is expected at all conference venues and conference-related social events. Harassment in any form will not be tolerated",
     },
     {
-      title: "Section 2",
+      title: "Registration & Badges",
       content:
-        "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+        "All attendees must wear their conference badge visibly at all times. Badges are non-transferable. Lost badges must be reported immediately to conference staff. Registration fees are non-refundable within 30 days of the event.",
     },
     {
-      title: "Section 3",
+      title: "Sessions & Presentations",
       content:
-        "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+        "Arrive at sessions on time to minimize disruption. Phones must be silenced during sessions. Photography/recording of presentations is prohibited without speaker consent. Questions should be held until the designated Q&A period. Speakers must adhere to their allocated time slots.",
     },
   ];
 
@@ -29,7 +29,7 @@ export const Info = () => {
   return (
     <section className="section-wrapper section" id="Info">
       <SectionHeader title="info" dir="l" />
-      <div className="w-full max-w-2xl mx-auto p-4 space-y-2 bg-gray-900">
+      <div className="w-full mx-auto p-4 space-y-2 pt-10">
         {accordionData.map((item, index) => (
           <div key={index} className="border border-gray-700 rounded-lg">
             <button
