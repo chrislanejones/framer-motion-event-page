@@ -19,12 +19,12 @@ const HoverCard: React.FC<HoverCardProps> = ({ description }) => {
   return (
     <div
       className={`transform transition-all duration-300 ease-in-out ${
-        isHovered ? "scale-105" : ""
+        isHovered ? "scale-95" : ""
       }`}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      <div className="relative w-full h-48 rounded-lg shadow-lg overflow-hidden">
+      <div className="w-full h-48 rounded-lg shadow-lg overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-75" />
         {description}
       </div>
@@ -67,7 +67,7 @@ export const Time = () => {
 
       <div className="pt-10">
         {/* Toggle Switch */}
-        <div className="grid grid-cols-1 sm:grid-cols-8 gap-4 mb-5 rounded-lg bg-slate-800 p-2 grid-background">
+        <div className="grid grid-cols-1 sm:grid-cols-8 gap-4 mb-5 rounded-lg bg-slate-800 p-2">
           <div className="flex justify-center sm:justify-start">
             <button
               className={`px-4 py-2 rounded-lg text-sm font-medium text-white border border-amber-400

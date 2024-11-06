@@ -6,7 +6,6 @@ import { Time } from "./time/Time";
 import { Info } from "./info/Info";
 import Speakers from "./speakers/Speakers";
 import { Heading } from "../nav/Heading";
-import ToggleButton from "../buttons/Toggle";
 
 export const Home = () => {
   return (
@@ -19,7 +18,6 @@ export const Home = () => {
           <Speakers />
           <Time />
           <Info />
-          <ToggleButton />
           <Contact />
           <div
             style={{
