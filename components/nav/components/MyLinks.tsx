@@ -1,4 +1,4 @@
-import { Linkedin, Github } from "react-icons/ai";
+import { AiFillLinkedin, AiFillGithub } from "react-icons/ai";
 import Link from "next/link";
 import { motion } from "framer-motion";
 
@@ -11,11 +11,11 @@ export const MyLinks = () => {
         transition={{ duration: 0.5, delay: 0.0 }}
       >
         <Link
-          href="https://www.linkedin.com/in/chrislanejones/https://www.linkedin.com/in/chrislanejones/"
+          href="https://www.linkedin.com/in/chrislanejones/"
           target="_blank"
-          rel="nofollow"
+          rel="noopener noreferrer"
         >
-          <Linkedin size="2.4rem" />
+          <AiFillLinkedin size="2.4rem" />
         </Link>
       </motion.span>
 
@@ -27,9 +27,9 @@ export const MyLinks = () => {
         <Link
           href="https://github.com/chrislanejones"
           target="_blank"
-          rel="nofollow"
+          rel="noopener noreferrer"
         >
-          <Github size="2.4rem" />
+          <AiFillGithub size="2.4rem" />
         </Link>
       </motion.span>
     </div>
