@@ -1,4 +1,5 @@
 import anime from "animejs";
+import React from "react";
 
 export const DotGrid = () => {
   const GRID_WIDTH = 25;
@@ -6,7 +7,24 @@ export const DotGrid = () => {
 
   const dots = [];
 
-  const handleDotClick = (e: any) => {
+  const handleDotClick = (e: React.MouseEvent<HTMLDivElement>) => {
+    // Make sure we can access dataset on the target
+    const target = e.target as HTMLElement;
+    const index = target.dataset.index;
+
+    // Validate index exists and is a number
+    if (!index) {
+      console.error("No index found on target element");
+      return;
+    }
+
+    const indexAsNumber = parseInt(index, 10);
+
+    if (isNaN(indexAsNumber)) {
+      console.error("Invalid index found on target element");
+      return;
+    }
+
     anime({
       targets: ".dot-point",
       scale: [
@@ -23,7 +41,7 @@ export const DotGrid = () => {
       ],
       delay: anime.stagger(100, {
         grid: [GRID_WIDTH, GRID_HEIGHT],
-        from: e.target.dataset.index,
+        from: indexAsNumber,
       }),
     });
   };
